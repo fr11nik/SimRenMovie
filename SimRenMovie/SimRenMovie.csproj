@@ -1,0 +1,349 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E74DA5B5-8CEC-4D36-B337-86C823B57E9C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SimRenMovie</RootNamespace>
+    <AssemblyName>SimRenMovie</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>cfg\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="formsDragControl">
+      <HintPath>cfg\formsDragControl.dll</HintPath>
+    </Reference>
+    <Reference Include="MediaPlayerUI, Version=0.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MediaPlayerUI.NET.0.9.0\lib\net461\MediaPlayerUI.dll</HintPath>
+    </Reference>
+    <Reference Include="MediaSlider">
+      <HintPath>..\packages\MediaSlider.dll</HintPath>
+    </Reference>
+    <Reference Include="Mpv.NET, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mpv.NET.1.1.1\lib\netstandard2.0\Mpv.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="MpvPlayerUI, Version=0.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MpvPlayerUI.NET.0.9.0\lib\net461\MpvPlayerUI.dll</HintPath>
+    </Reference>
+    <Reference Include="PlayerSimRen">
+      <HintPath>..\..\..\VideoPlayer\VideoPlayer\bin\Debug\PlayerSimRen.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.AccessControl, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.4.7.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Permissions.4.7.0\lib\net461\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.4.7.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Card\ICardItem.cs" />
+    <Compile Include="Components\SearchComponent.cs" />
+    <Compile Include="Components\UserLibrary.cs" />
+    <Compile Include="Card\GetCardsData.cs" />
+    <Compile Include="ControlExtensions\ListShuffle.cs" />
+    <Compile Include="ControlExtensions\TypeQuerySeparator\SwitchQuerySeparator.cs" />
+    <Compile Include="Card\bascketPurchadeFilmCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Card\bascketPurchadeFilmCard.Designer.cs">
+      <DependentUpon>bascketPurchadeFilmCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Card\BuyPurchaseFilmCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Card\BuyPurchaseFilmCard.Designer.cs">
+      <DependentUpon>BuyPurchaseFilmCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\SettingsMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\SettingsMenu.Designer.cs">
+      <DependentUpon>SettingsMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\UserBascket.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\UserBascket.Designer.cs">
+      <DependentUpon>UserBascket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\VideoPlayer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\VideoPlayer.Designer.cs">
+      <DependentUpon>VideoPlayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminPanel.Designer.cs">
+      <DependentUpon>AdminPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\DGVUsersControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\DGVUsersControl.Designer.cs">
+      <DependentUpon>DGVUsersControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\headerMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\headerMenu.Designer.cs">
+      <DependentUpon>headerMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Card\cardContent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Card\cardContent.Designer.cs">
+      <DependentUpon>cardContent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\CaruselContainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\CaruselContainer.Designer.cs">
+      <DependentUpon>CaruselContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\leftMenuContainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\leftMenuContainer.Designer.cs">
+      <DependentUpon>leftMenuContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FilmForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FilmForm.Designer.cs">
+      <DependentUpon>FilmForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\mainPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\mainPage.Designer.cs">
+      <DependentUpon>mainPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlExtensions\ControlExtensions.cs" />
+    <Compile Include="ControlExtensions\CryptoEngine.cs" />
+    <Compile Include="DatabaseLoader\ApiOrderRepository.cs" />
+    <Compile Include="DatabaseLoader\SSQLOrderRepository.cs" />
+    <Compile Include="DatabaseLoader\IOrderSource.cs" />
+    <Compile Include="DatabaseLoader\OrderRepository.cs" />
+    <Compile Include="CustomControls\userMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\userMenu.Designer.cs">
+      <DependentUpon>userMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Card\purchaseFilmCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Card\purchaseFilmCard.Designer.cs">
+      <DependentUpon>purchaseFilmCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\ILogin.cs" />
+    <Compile Include="Login\LoginUser.cs" />
+    <Compile Include="Login\LoginSSQL.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Registration\InputDataVerifier\ISignUpDataVerifier.cs" />
+    <Compile Include="Registration\InputDataVerifier\SignUpDataVerifier.cs" />
+    <Compile Include="Registration\ISignUp.cs" />
+    <Compile Include="Registration\SignUp.cs" />
+    <Compile Include="Registration\SSQLSignUp.cs" />
+    <Compile Include="Users\UserBase.cs" />
+    <Compile Include="Users\IUser.cs" />
+    <Compile Include="Forms\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Users\User.cs" />
+    <Compile Include="Users\UserAdmin.cs" />
+    <Compile Include="Users\UserModerador.cs" />
+    <EmbeddedResource Include="Card\bascketPurchadeFilmCard.resx">
+      <DependentUpon>bascketPurchadeFilmCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Card\BuyPurchaseFilmCard.resx">
+      <DependentUpon>BuyPurchaseFilmCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\SettingsMenu.resx">
+      <DependentUpon>SettingsMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Card\cardContent.resx">
+      <DependentUpon>cardContent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\UserBascket.resx">
+      <DependentUpon>UserBascket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\VideoPlayer.resx">
+      <DependentUpon>VideoPlayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminPanel.resx">
+      <DependentUpon>AdminPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\DGVUsersControl.resx">
+      <DependentUpon>DGVUsersControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\headerMenu.resx">
+      <DependentUpon>headerMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\CaruselContainer.resx">
+      <DependentUpon>CaruselContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\leftMenuContainer.resx">
+      <DependentUpon>leftMenuContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FilmForm.resx">
+      <DependentUpon>FilmForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\mainPage.resx">
+      <DependentUpon>mainPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\userMenu.resx">
+      <DependentUpon>userMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Card\purchaseFilmCard.resx">
+      <DependentUpon>purchaseFilmCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Source\Admin-Panel_bckg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Source\Background-login-red.jpg" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Source\ic_home_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Source\seatch_btn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Source\seatch_btn1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Source\icons8-forward-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Source\priceButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Source\Без имени-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Source\icons8-home-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Source\btn_discover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Source\btn_newRealise.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Source\btn_upcoming.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Source\btn_favorites.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <NativeReference Include="mpv, Version=0.0.9.0, ProcessorArchitecture=%2a, Type=win32">
+      <Name>mpv-1.dll</Name>
+      <HintPath>cfg\mpv-1.dll</HintPath>
+    </NativeReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app.ico" />
+    <None Include="Source\pause_51px.png" />
+    <None Include="Source\play_50px.png" />
+    <None Include="Source\pause_50px.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
